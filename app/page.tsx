@@ -15,8 +15,9 @@ import { MdEmail } from "react-icons/md";
 
 export default function Home() {
 
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [mobileMenu, setMobileMenu] = useState(false);
+const [selectedImage, setSelectedImage] = useState<number | null>(null);
+const [selectedProjectImage, setSelectedProjectImage] = useState<string | null>(null);
+const [mobileMenu, setMobileMenu] = useState(false);
 const artworks = [
   {
     src: "/art1.jpg",
@@ -135,7 +136,25 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
     alt: "comic book cover red sonja comics",
   },
 ];
+const nextImage = () => {
+  if (selectedImage === null) return;
 
+  setSelectedImage(
+    selectedImage === artworks.length - 1
+      ? 0
+      : selectedImage + 1
+  );
+};
+
+const prevImage = () => {
+  if (selectedImage === null) return;
+
+  setSelectedImage(
+    selectedImage === 0
+      ? artworks.length - 1
+      : selectedImage - 1
+  );
+};
   
 
   return (
@@ -209,40 +228,55 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
 
       <a
         href="#home"
-        onClick={() => setMobileMenu(false)}
-        className="hover:text-zinc-400 transition"
+        onClick={() => {
+  setTimeout(() => {
+    setMobileMenu(false);
+  }, 100);
+}}        className="hover:text-zinc-400 transition"
       >
         Home
       </a>
 
       <a
         href="#work"
-        onClick={() => setMobileMenu(false)}
-        className="hover:text-zinc-400 transition"
+        onClick={() => {
+  setTimeout(() => {
+    setMobileMenu(false);
+  }, 100);
+}}        className="hover:text-zinc-400 transition"
       >
         Work
       </a>
 
       <a
         href="#info"
-        onClick={() => setMobileMenu(false)}
-        className="hover:text-zinc-400 transition"
+        onClick={() => {
+  setTimeout(() => {
+    setMobileMenu(false);
+  }, 100);
+}}        className="hover:text-zinc-400 transition"
       >
         Info
       </a>
 
       <a
         href="#projects"
-        onClick={() => setMobileMenu(false)}
-        className="hover:text-zinc-400 transition"
+        onClick={() => {
+  setTimeout(() => {
+    setMobileMenu(false);
+  }, 100);
+}}        className="hover:text-zinc-400 transition"
       >
         Projects
       </a>
 
       <a
         href="#contact"
-        onClick={() => setMobileMenu(false)}
-        className="hover:text-zinc-400 transition"
+        onClick={() => {
+  setTimeout(() => {
+    setMobileMenu(false);
+  }, 100);
+}}        className="hover:text-zinc-400 transition"
       >
         Contact
       </a>
@@ -425,7 +459,7 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
 </h2>
 
 <p className="text-zinc-400 mb-12 max-w-3xl">
-  Comic cover art and narrative-driven illustrations for entertainment publishing,
+  Comic cover artworks and narrative-driven illustrations for entertainment publishing
 </p>
 
 <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
@@ -441,7 +475,7 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
   loading="lazy"
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   quality={75}
-  onClick={() => setSelectedImage(art.src)}
+  onClick={() => setSelectedImage(index)}
   className="rounded-xl w-full hover:scale-[1.02] hover:brightness-110 transition duration-500 cursor-pointer"
 />
 
@@ -507,7 +541,7 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
 <div className="max-w-7xl mx-auto mt-20 md:mt-32">
 
   <h3 className="text-2xl md:text-3xl font-bold mb-12 text-center">
-  Selected Clients & Publishers
+ Clients & Publishers
 </h3>
 
   <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 items-center opacity-70">
@@ -712,90 +746,129 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
 
     <div className="space-y-32">
 
-      {/* PROJECT 1 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+{/* PROJECT 1 */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
 
-      <Image
-  src="/project1.jpg"
-  alt="Legend of Adora"
-  width={1200}
-  height={800}
-  className="rounded-2xl w-full"
+  <Image
+    src="/project1.jpg"
+    alt="Legend of Adora"
+    width={1200}
+    height={800}
+    className="rounded-2xl w-full"
+  />
+
+  <div>
+
+    <p className="uppercase tracking-[0.3em] text-sm text-zinc-500 mb-4">
+      Original Comic Series
+    </p>
+
+    <h3 className="text-3xl md:text-4xl font-bold mb-10">
+      Legend of Adora, Book I
+    </h3>
+
+    <div className="space-y-8 text-zinc-300 leading-relaxed text-base md:text-lg">
+
+      <p>
+        <strong className="text-white">
+          Legend of Adora
+        </strong>{" "}
+        is an original fantasy comic series created by Tiago da Silva,
+        set in a world shaped by magic, ancient civilizations,
+        and mysterious creatures.
+        The project combines cinematic storytelling,
+        detailed worldbuilding, and painterly illustration
+        inspired by classic fantasy art and modern comics.
+      </p>
+
+      <p>
+        <strong className="text-white">
+          Synopsis
+        </strong>{" "}
+        "No one ever thought that a school trip to the museum could lead to this.
+
+        It was just a regular school trip until Ash and Ollie wander through the museum hallways on their own. Then Ash finds a room full of artifacts. Curious by a faint light coming out from a chest, he opens it to look inside where he finds a strange, cube-shaped thing. As he grabs the object, it starts glowing.
+
+        The artifact turns out be a key, a magical item possessing the power to create a connection to another world, a world called Adora. But the passage between the two worlds is not without consequences. Nothing will ever be the same; in Adora the very rules of the universe are different.
+
+        And so, the adventure begins..."
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+{/* ADDITIONAL ARTWORK */}
+<div className="md:col-span-2 mt-2">
+
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+<Image
+  src="/project1b.jpg"
+  alt="Legend of Adora artwork"
+  width={600}
+  height={600}
+  onClick={() => setSelectedProjectImage("/project1b.jpg")}
+  className="rounded-xl w-full cursor-pointer hover:scale-[1.02] transition duration-300"
 />
 
-        <div>
-
-          <p className="uppercase tracking-[0.3em] text-sm text-zinc-500 mb-4">
-            Original Comic Series
-          </p>
-
-          <h3 className="text-3xl md:text-4xl font-bold mb-10">
-            Legend of Adora, Book I
-          </h3>
-
-          <div className="space-y-8 text-zinc-300 leading-relaxed text-base md:text-lg">            <p>
-              <strong className="text-white">
-                Legend of Adora
-              </strong>{" "}
-              is an original fantasy comic series created by Tiago da Silva,
-              set in a world shaped by magic, ancient civilizations,
-              and mysterious creatures.
-            The project combines cinematic storytelling,
-              detailed worldbuilding, and painterly illustration
-              inspired by classic fantasy art and modern comics.
-            </p>
-
-              <p>
-      <strong className="text-white">
-                Synopsis
-              </strong>{" "}
-             "No one ever thought that a school trip to the museum could lead to this.
-
-It was just a regular school trip until Ash and Ollie wander through the museum hallways on their own. Then Ash finds a room full of artifacts. Curious by a faint light coming out from a chest, he opens it to look inside where he finds a strange, cube-shaped thing. As he grabs the object, it starts glowing.
- 
-The artifact turns out be a key, a magical item possessing the power to create a connection to another world, a world called Adora. But the passage between the two worlds is not without consequences. Nothing will ever be the same; in Adora the very rules of the universe are different.
-
-And so, the adventure begins..."
-
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      {/* PROJECT 2 */}
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-
-        <div>
-
-          <h3 className="text-4xl font-bold mb-6">
-            Untitled Project 
-          </h3>
-
-          <p className="text-zinc-400 leading-relaxed text-lg">
-            In progress, more news soon
-          </p>
-
-        </div>
-
-       <Image
-  src="/project2.jpg"
-  alt="Upcoming Project"
-  width={1200}
-  height={800}
-  className="rounded-2xl w-full"
+ <Image
+  src="/project1c.jpg"
+  alt="Legend of Adora artwork"
+  width={600}
+  height={600}
+  onClick={() => setSelectedProjectImage("/project1b.jpg")}
+  className="rounded-xl w-full cursor-pointer hover:scale-[1.02] transition duration-300"
 />
 
-      </div>
+<Image
+  src="/project1d.jpg"
+  alt="Legend of Adora artwork"
+  width={600}
+  height={600}
+  onClick={() => setSelectedProjectImage("/project1b.jpg")}
+  className="rounded-xl w-full cursor-pointer hover:scale-[1.02] transition duration-300"
+/>
+
+
+  </div>
+
+</div>
+
+    
 
     </div>
 
   </div>
 
 </section>
+<section className="md:hidden py-10 bg-zinc-950">
+  <div className="flex justify-center gap-8 text-3xl">
 
+    <a href="https://www.instagram.com/grafiktiago/" target="_blank">
+      <FaInstagram />
+    </a>
+
+    <a href="https://www.facebook.com/grafiktiago/" target="_blank">
+      <FaFacebookF />
+    </a>
+
+    <a href="https://x.com/grafik_tiago/" target="_blank">
+      <FaXTwitter />
+    </a>
+
+    <a href="https://www.artstation.com/tiagodasilva/" target="_blank">
+      <FaArtstation />
+    </a>
+
+    <a href="mailto:tiago.da.silva@outlook.com">
+      <MdEmail />
+    </a>
+
+  </div>
+</section>
 
 {/* CONTACT */}
 <section
@@ -822,27 +895,79 @@ And so, the adventure begins..."
   </div>
 
 </section>
+{/* PROJECT IMAGE VIEWER */}
+{selectedProjectImage && (
+  <div
+    className="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-6"
+    onClick={() => setSelectedProjectImage(null)}
+  >
+    <Image
+      src={selectedProjectImage}
+      alt="Project artwork"
+      width={1600}
+      height={1600}
+      className="max-w-full max-h-[90vh] object-contain rounded-xl"
+      onClick={(e) => e.stopPropagation()}
+    />
+
+    <button
+      className="absolute top-8 right-8 text-white text-5xl"
+      onClick={(e) => {
+        e.stopPropagation();
+        setSelectedProjectImage(null);
+      }}
+    >
+      ×
+    </button>
+  </div>
+)}
 {/* FULLSCREEN VIEWER */}
-{selectedImage && (
+{selectedImage !== null && (
 
   <div
     className="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-6"
     onClick={() => setSelectedImage(null)}
   >
 
-    {/* IMAGE */}
-   <Image
-  src={selectedImage}
-  alt="Artwork fullscreen preview"
-  width={1600}
-  height={1600}
-  className="max-w-full max-h-[90vh] object-contain rounded-xl"
-/>
-
-    {/* CLOSE BUTTON */}
+    {/* PREVIOUS */}
     <button
-      className="absolute top-8 right-8 text-white text-5xl"
-      onClick={() => setSelectedImage(null)}
+      onClick={(e) => {
+        e.stopPropagation();
+        prevImage();
+      }}
+      className="absolute left-6 text-white text-6xl z-50 hover:scale-110 transition"
+    >
+      ‹
+    </button>
+
+    {/* IMAGE */}
+    <Image
+      src={artworks[selectedImage].src}
+      alt={artworks[selectedImage].alt}
+      width={1600}
+      height={1600}
+      onClick={(e) => e.stopPropagation()}
+      className="max-w-full max-h-[90vh] object-contain rounded-xl"
+    />
+
+    {/* NEXT */}
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        nextImage();
+      }}
+      className="absolute right-6 text-white text-6xl z-50 hover:scale-110 transition"
+    >
+      ›
+    </button>
+
+    {/* CLOSE */}
+    <button
+      className="absolute top-8 right-8 text-white text-5xl z-50"
+      onClick={(e) => {
+        e.stopPropagation();
+        setSelectedImage(null);
+      }}
     >
       ×
     </button>
