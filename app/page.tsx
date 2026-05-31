@@ -170,10 +170,10 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
       </a>
 
       <a
-        href="#gallery"
+        href="#work"
         className="hover:text-white transition duration-300"
       >
-        Gallery
+        Work
       </a>
 
       <a
@@ -216,11 +216,11 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
       </a>
 
       <a
-        href="#gallery"
+        href="#work"
         onClick={() => setMobileMenu(false)}
         className="hover:text-zinc-400 transition"
       >
-        Gallery
+        Work
       </a>
 
       <a
@@ -282,17 +282,11 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
     <div className="max-w-3xl">
 
       {/* SMALL INTRO */}
-      <p className="uppercase tracking-[0.4em] text-white mb-6 text-sm">
-        Digital Artist • Illustrator
-      </p>
-
+   
       {/* MAIN TITLE */}
       <h1 className="text-4xl sm:text-5xl md:text-8xl font-black leading-none tracking-tight">
 
-        <span className="block text-zinc-200">
-          Welcome to
-        </span>
-
+      
         <span className="block mt-2">
           THE ART OF
         </span>
@@ -305,18 +299,17 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
 
       {/* SUBTITLE */}
       <p className="mt-6 text-base sm:text-lg md:text-2xl text-zinc-300 leading-relaxed max-w-2xl">
-        A world of illustrations, fantasy worlds,
-        comic art, and cinematic digital painting.
+        Comic cover artist and illustrator specializing in narrative-driven artworks for comics and entertainment media.
       </p>
 
       {/* BUTTONS */}
       <div className="flex flex-col sm:flex-row gap-4 mt-10">
 
         <a
-          href="#gallery"
+          href="#work"
           className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:scale-105 transition duration-300"
         >
-          Explore Gallery
+          Explore Work
         </a>
 
         <a
@@ -412,12 +405,12 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
 
 </section>
 
-      {/* GALLERY */}
+      {/* WORK */}
  
-{/* GALLERY */}
+{/* WORK */}
 
 <motion.section
-  id="gallery"
+  id="work"
   className="min-h-screen px-4 md:px-6 py-16 md:py-24 bg-black"
   initial={{ opacity: 0, y: 80 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -428,11 +421,11 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
   <div className="max-w-7xl mx-auto">
 
 <h2 className="text-3xl md:text-5xl font-bold mb-4">
-  Gallery
+  Work
 </h2>
 
 <p className="text-zinc-400 mb-12 max-w-3xl">
-  Fantasy art, comic book covers, digital paintings, concept art and professional illustrations.
+  Comic cover art and narrative-driven illustrations for entertainment publishing,
 </p>
 
 <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
@@ -489,34 +482,19 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
           <strong className="text-white">
             Tiago da Silva, aka Grafik,
           </strong>{" "}
-          is a Portuguese digital artist and illustrator.
-          His career spans editorial illustration, advertising,
-          comics, videogames, and film, bringing a versatile visual
-          language and strong storytelling approach to every project.
-        </p>
+          is a Portuguese digital illustrator and published comic cover artist specializing in narrative-driven artwork for comics and entertainment publishing.
+  </p>
 
         <p>
-          Inspired by comic books from an early age, Tiago later
-          studied Graphic Design, where he discovered digital painting
-          and built the technical foundation for his career.
-        </p>
+          His work is centered on storytelling, composition, and visual impact, developed through digital painting and illustration.
+  </p>
+        
 
         <p>
-          Since then, he has gained international recognition,
-          earning awards and collaborating with major publishers
-          and entertainment studios.
-        </p>
+         He is a cover artist in the comics industry, with work featured in internationally distributed publications, including the Spanish editions of the Harry Potter book series. He has also contributed to projects within the entertainment and videogame industries.</p>
 
         <p>
-          Tiago is known for illustrating the Spanish Harry Potter
-          covers and for creating <em>A Lenda de Adora</em>,
-          his original fantasy comic saga.
-        </p>
-
-        <p>
-          Today, his work is prominently featured in mainstream comics,
-          producing cover art for Marvel, DC Comics, and a growing
-          range of international publishers.
+         He currently focuses on comic cover art and narrative illustration, alongside personal projects.
         </p>
 
       </div>
@@ -690,8 +668,8 @@ alt: "Fantasy warrior illustration by Tiago da Silva, digital painting"
          <li>Award (Harry Potter) Curtas, Festival do Imaxinario de Vilagarcía de Arousa </li>
         <li>DeviantArt Daily Deviations</li>
         <li>3DTotal The Golden Eye</li>
-        <li>It’s Art CGGallery Daily Selections</li>
-        <li>It’s Art CGGallery Weekly Selections</li>
+        <li>It’s Art CGWork Daily Selections</li>
+        <li>It’s Art CGWork Weekly Selections</li>
       </ul>
 
     </div>
